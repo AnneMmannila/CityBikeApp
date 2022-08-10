@@ -1,37 +1,49 @@
 package com.CityBikeApp.journey;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Positive;
 
 @Entity
+@Table(name = "Journey")
 public class Journey {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
+	@Column(name = "id")
 	private long id;
 
+	@Column(name = "departureTime")
 	@NotBlank(message = "Departure time is mandatory")
 	private String departureTime;
 
+	@Column(name = "returnTime")
 	@NotBlank(message = "Return time is mandatory")
 	private String returnTime;
 
+	@Column(name = "departureStationId")
 	private int departureStationId;
 
+	@Column(name = "departureStationName")
 	@NotBlank(message = "Departure station name is mandatory")
 	private String departureStationName;
 
+	@Column(name = "returnStationId")
 	private int returnStationId;
 
+	@Column(name = "returnStationName")
 	@NotBlank(message = "Return station name is mandatory")
 	private String returnStationName;
 
+	@Column(name = "coveredDistanceInMeters")
 	@Positive(message = "Covered distance cannot be zero")
 	private double coveredDistanceInMeters;
 
+	@Column(name = "journeyDurationInSec")
 	@Positive(message = "Journey duration cannot be zero")
 	private double journeyDurationInSec;
 
