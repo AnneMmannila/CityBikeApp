@@ -14,6 +14,9 @@ public class Station {
 	@Column(name = "id")
 	private long id;
 	
+	@Column(name = "stationId")
+	private long stationId;
+	
 	@Column(name = "nimi")
 	private String nimi;
 	
@@ -42,18 +45,19 @@ public class Station {
 	private String kapasiteet;
 	
 	@Column(name = "latitude")
-	private long latitude;
+	private float latitude;
 	
 	@Column(name = "longitude")
-	private long longitude;
+	private float longitude;
 	
 	public Station () {
 		super();
 	}
 	
-	public Station(String nimi, String namn, String name, String osoite, String address, String kaupunki, String stad,
-			String operaattor, String kapasiteet, long latitude, long longitude) {
+	public Station(long stationId, String nimi, String namn, String name, String osoite, String address, String kaupunki, String stad,
+			String operaattor, String kapasiteet, float latitude, float longitude) {
 		super();
+		this.stationId = stationId;
 		this.nimi = nimi;
 		this.namn = namn;
 		this.name = name;
@@ -67,6 +71,14 @@ public class Station {
 		this.longitude = longitude;
 	}
 	
+
+	public long getStationId() {
+		return stationId;
+	}
+
+	public void setStationId(long stationId) {
+		this.stationId = stationId;
+	}
 
 	public long getId() {
 		return id;
@@ -148,19 +160,19 @@ public class Station {
 		this.kapasiteet = kapasiteet;
 	}
 
-	public long getLatitude() {
+	public float getLatitude() {
 		return latitude;
 	}
 
-	public void setLatitude(long latitude) {
+	public void setLatitude(float latitude) {
 		this.latitude = latitude;
 	}
 
-	public long getLongitude() {
+	public float getLongitude() {
 		return longitude;
 	}
 
-	public void setLongitude(long longitude) {
+	public void setLongitude(float longitude) {
 		this.longitude = longitude;
 	}
 

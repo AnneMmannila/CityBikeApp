@@ -35,7 +35,6 @@ public class CityBikeAppController {
 	@RequestMapping(value = "/stationslist")
 	public List<Station> allStations(Model model) {
 		List<Station> stations = stationRepository.findAll();
-	
 
 		return stations;
 	}
