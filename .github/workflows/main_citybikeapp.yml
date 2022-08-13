@@ -14,8 +14,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - checkout: self
-        lfs: true 
          
       - uses: actions/checkout@v2
 
