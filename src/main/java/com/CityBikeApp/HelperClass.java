@@ -16,25 +16,25 @@ public class HelperClass {
 			BufferedReader br = new BufferedReader(new FileReader("..\\CityBikeApp\\data\\2021-05.csv"));
 			String line;
 			int i = 0;
+			// skip first line
+			br.readLine();
 			// bring app data and ignore first 7 lines
 			while ((line = br.readLine()) != null && i < 500) {
 				try {
 					String[] values = line.split(",");
-					if (i > 7) {
-						Double distance = Double.parseDouble(values[6]);
-						Double duration = Double.parseDouble(values[7]);
-						if (distance > 10 && duration > 10) {
-							Journey journey = new Journey();
-							journey.setDepartureTime(values[0]);
-							journey.setReturnTime(values[1]);
-							journey.setDepartureStationId(Integer.parseInt(values[2]));
-							journey.setDepartureStationName(values[3]);
-							journey.setReturnStationId(Integer.parseInt(values[4]));
-							journey.setReturnStationName(values[5]);
-							journey.setCoveredDistanceInMeters(distance);
-							journey.setJourneyDurationInSec(duration);
-							repository.save(journey);
-						}
+					Double distance = Double.parseDouble(values[6]);
+					Double duration = Double.parseDouble(values[7]);
+					if (distance > 10 && duration > 10) {
+						Journey journey = new Journey();
+						journey.setDepartureTime(values[0]);
+						journey.setReturnTime(values[1]);
+						journey.setDepartureStationId(Integer.parseInt(values[2]));
+						journey.setDepartureStationName(values[3]);
+						journey.setReturnStationId(Integer.parseInt(values[4]));
+						journey.setReturnStationName(values[5]);
+						journey.setCoveredDistanceInMeters(distance);
+						journey.setJourneyDurationInSec(duration);
+						repository.save(journey);
 					}
 					i++;
 				} catch (NumberFormatException ex) {
@@ -51,10 +51,6 @@ public class HelperClass {
 
 	}
 
-	/*
-	 * ,Kapasiteet,x,y
-	 */
-
 	public static void uploadStations(StationRepository repository) {
 		try {
 			BufferedReader br = new BufferedReader(
@@ -70,7 +66,7 @@ public class HelperClass {
 
 					long stationId = Long.parseLong(values[1]);
 					float latitude = Float.parseFloat(values[11]);
-					float longitude =  Float.parseFloat(values[12]);
+					float longitude = Float.parseFloat(values[12]);
 
 					station.setStationId(stationId);
 					station.setNimi(values[2]);
