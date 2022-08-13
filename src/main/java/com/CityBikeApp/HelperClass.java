@@ -69,15 +69,15 @@ public class HelperClass {
 					float longitude = Float.parseFloat(values[12]);
 
 					station.setStationId(stationId);
-					station.setNimi(values[2]);
-					station.setNamn(values[3]);
+					station.setName_FI(values[2]);
+					station.setName_SV(values[3]);
 					station.setName(values[4]);
-					station.setOsoite(values[5]);
+					station.setAddress_FI(values[5]);
 					station.setAddress(values[6]);
-					station.setKaupunki(values[7]);
-					station.setStad(values[8]);
-					station.setOperaattor(values[9]);
-					station.setKapasiteet(values[10]);
+					station.setCity_FI(values[7]);
+					station.setCity_SV(values[8]);
+					station.setOperator(values[9]);
+					station.setCapacity(values[10]);
 					station.setLatitude(latitude);
 					station.setLongitude(longitude);
 					repository.save(station);

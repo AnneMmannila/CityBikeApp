@@ -13,71 +13,60 @@ public class Station {
 	@Id
 	@Column(name = "id")
 	private long id;
-	
+
 	@Column(name = "stationId")
 	private long stationId;
-	
-	@Column(name = "nimi")
-	private String nimi;
-	
-	@Column(name = "namn")
-	private String namn;
-	
+
+	@Column(name = "name_FI")
+	private String name_FI;
+
+	@Column(name = "name_SV")
+	private String name_SV;
+
 	@Column(name = "name")
 	private String name;
-	
-	@Column(name = "osoite")
-	private String osoite;
-	
+
+	@Column(name = "address_FI")
+	private String address_FI;
+
 	@Column(name = "address")
 	private String address;
-	
-	@Column(name = "kaupunki")
-	private String kaupunki;
-	
+
+	@Column(name = "city_FI")
+	private String city_FI;
+
 	@Column(name = "stad")
-	private String stad;
-	
-	@Column(name = "operaattor")
-	private String operaattor;
-	
-	@Column(name = "kapasiteet")
-	private String kapasiteet;
-	
+	private String city_SV;
+
+	@Column(name = "operator")
+	private String operator;
+
+	@Column(name = "capacity")
+	private String capacity;
+
 	@Column(name = "latitude")
 	private float latitude;
-	
+
 	@Column(name = "longitude")
 	private float longitude;
-	
-	public Station () {
+
+	public Station() {
 		super();
 	}
-	
-	public Station(long stationId, String nimi, String namn, String name, String osoite, String address, String kaupunki, String stad,
-			String operaattor, String kapasiteet, float latitude, float longitude) {
-		super();
+
+	public Station(long stationId, String name_FI, String name_SV, String name, String address_FI, String address,
+			String city_FI, String city_SV, String operator, String capacity, float latitude) {
 		this.stationId = stationId;
-		this.nimi = nimi;
-		this.namn = namn;
+		this.name_FI = name_FI;
+		this.name_SV = name_SV;
 		this.name = name;
-		this.osoite = osoite;
+		this.address_FI = address_FI;
 		this.address = address;
-		this.kaupunki = kaupunki;
-		this.stad = stad;
-		this.operaattor = operaattor;
-		this.kapasiteet = kapasiteet;
+		this.city_FI = city_FI;
+		this.city_SV = city_SV;
+		this.operator = operator;
+		this.capacity = capacity;
 		this.latitude = latitude;
-		this.longitude = longitude;
-	}
-	
-
-	public long getStationId() {
-		return stationId;
-	}
-
-	public void setStationId(long stationId) {
-		this.stationId = stationId;
 	}
 
 	public long getId() {
@@ -88,20 +77,28 @@ public class Station {
 		this.id = id;
 	}
 
-	public String getNimi() {
-		return nimi;
+	public long getStationId() {
+		return stationId;
 	}
 
-	public void setNimi(String nimi) {
-		this.nimi = nimi;
+	public void setStationId(long stationId) {
+		this.stationId = stationId;
 	}
 
-	public String getNamn() {
-		return namn;
+	public String getName_FI() {
+		return name_FI;
 	}
 
-	public void setNamn(String namn) {
-		this.namn = namn;
+	public void setName_FI(String name_FI) {
+		this.name_FI = name_FI;
+	}
+
+	public String getName_SV() {
+		return name_SV;
+	}
+
+	public void setName_SV(String name_SV) {
+		this.name_SV = name_SV;
 	}
 
 	public String getName() {
@@ -112,12 +109,12 @@ public class Station {
 		this.name = name;
 	}
 
-	public String getOsoite() {
-		return osoite;
+	public String getAddress_FI() {
+		return address_FI;
 	}
 
-	public void setOsoite(String osoite) {
-		this.osoite = osoite;
+	public void setAddress_FI(String address_FI) {
+		this.address_FI = address_FI;
 	}
 
 	public String getAddress() {
@@ -128,36 +125,36 @@ public class Station {
 		this.address = address;
 	}
 
-	public String getKaupunki() {
-		return kaupunki;
+	public String getCity_FI() {
+		return city_FI;
 	}
 
-	public void setKaupunki(String kaupunki) {
-		this.kaupunki = kaupunki;
+	public void setCity_FI(String city_FI) {
+		this.city_FI = city_FI;
 	}
 
-	public String getStad() {
-		return stad;
+	public String getCity_SV() {
+		return city_SV;
 	}
 
-	public void setStad(String stad) {
-		this.stad = stad;
+	public void setCity_SV(String city_SV) {
+		this.city_SV = city_SV;
 	}
 
-	public String getOperaattor() {
-		return operaattor;
+	public String getOperator() {
+		return operator;
 	}
 
-	public void setOperaattor(String operaattor) {
-		this.operaattor = operaattor;
+	public void setOperator(String operator) {
+		this.operator = operator;
 	}
 
-	public String getKapasiteet() {
-		return kapasiteet;
+	public String getCapacity() {
+		return capacity;
 	}
 
-	public void setKapasiteet(String kapasiteet) {
-		this.kapasiteet = kapasiteet;
+	public void setCapacity(String capacity) {
+		this.capacity = capacity;
 	}
 
 	public float getLatitude() {
@@ -175,6 +172,5 @@ public class Station {
 	public void setLongitude(float longitude) {
 		this.longitude = longitude;
 	}
-
 
 }
