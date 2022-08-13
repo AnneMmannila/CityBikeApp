@@ -16,3 +16,4 @@ The app should then run on port 8080.
 
 You need to have this backend running for frontend.
 
+![journeysrest](https://user-images.githubusercontent.com/70891200/184506959-d54029d1-6410-4447-b36b-e12e13d52790.png)
