@@ -4,7 +4,7 @@ Java Spring Boot backend / REST API app to show journeys made with city bikes in
 Backend built with Spring Boot, Java and JPA.
 
 About the project:
--used spring-boot-starter-parent for dependency version control
+-used spring-boot-starter-parent for dependency version control  
 -maven package handling
 -organized package by feature for Spring Boot location scanning
 -hibernate validator
