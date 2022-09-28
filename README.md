@@ -3,6 +3,12 @@ Java Spring Boot backend / REST API app to show journeys made with city bikes in
 
 Backend built with Spring Boot, Java and JPA.
 
+About the project:
+-used spring-boot-starter-parent for dependency version control
+-maven package handling
+-organized package by feature for Spring Boot location scanning
+-hibernate validator
+
 You will need java 8 to run this application (https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html). If you have other version of java simply change it from project's pom.xml :
     <properties>
 		<java.version>8</java.version>
