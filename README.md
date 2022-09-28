@@ -14,7 +14,7 @@ You will need java 8 to run this application (https://docs.oracle.com/javase/8/d
 		<java.version>8</java.version>
     </properties>
 
-If you want to run the project from commanline you will need maven. Install maven: (https://maven.apache.org/install.html).
+If you wish to run the project from commandline you will need maven. Install maven: (https://maven.apache.org/install.html).
 Then run from project directory 
 mvn package
 and
